@@ -1,0 +1,8 @@
+{
+    "default_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "output_dir": "embeddings_output",
+    "tensorboard": {
+        "log_dir": "logs",
+        "default_port": 6006
+    }
+}
