@@ -134,7 +134,7 @@ En TensorBoard podrás:
 ## 📄 Licencia
 
 <p align="center">
-	Repositorio generado por <a href="https://github.com/sabiopobre" target="_blank">virtu 🎣</a>
+	Repositorio generado por <a href="https://github.com/virtuanista" target="_blank">virtu 🎣</a>
 </p>
 
 <p align="center">
