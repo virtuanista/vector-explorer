@@ -129,7 +129,7 @@ En TensorBoard podrás:
 
 - Si tienes alguna duda, o necesitas ayuda, podemos conectar en [Linkedin](https://www.linkedin.com/in/virtuanista/).
 - Si quieres compartir el proyecto: [https://github.com/virtuanista/vector-explorer](https://github.com/virtuanista/vector-explorer)
-- Si te ha gustado, una estrella es bienvenida ⭐
+- Si te ha gustado, una estrellita es bienvenida ⭐
 
 ## 📄 Licencia
 
