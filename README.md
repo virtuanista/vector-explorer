@@ -33,6 +33,14 @@ Esta herramienta puede ser especialmente útil para:
 - **Visualización Interactiva**: Integración con TensorBoard para visualizar los embeddings en un espacio tridimensional.
 - **Interfaz CLI Amigable**: Interfaz de línea de comandos interactiva para facilitar el uso.
 
+## 👀 Vídeo recomendado
+
+- [DotCSV - ¿Qué es Word2Vec? (YouTube)](https://youtu.be/RkYuH_K7Fx4)
+
+## 📄 Paper original de Word2Vec
+
+- [Word2Vec: Efficient Estimation of Word Representations in Vector Space (Mikolov et al., 2013)](https://arxiv.org/pdf/1301.3781)
+
 ## 🛠️ Estructura del Proyecto
 
 ```
