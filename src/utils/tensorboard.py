@@ -33,47 +33,50 @@ class TensorBoardManager:
             f.write(config_content)
 
     def start_tensorboard(self):
-        """Inicia TensorBoard con la configuración actual"""
+        """Inicia TensorBoard con la configuración actual, detectando el entorno automáticamente"""
         try:
-            # Preparar archivo de configuración
             self.prepare_projector_config()
-            
-            # Verificar si TensorBoard ya está corriendo
             if self.process:
                 logger.info("TensorBoard ya está corriendo")
                 return
-            
-            # Iniciar TensorBoard
             port = self.config.get('tensorboard', {}).get('default_port', 6006)
-            cmd = ["tensorboard", "--logdir", str(self.output_dir), "--port", str(port)]
-            
+            # Detección automática de comando para Windows
+            tb_cmd = None
+            if os.name == 'nt':
+                # Buscar tensorboard.exe en venv
+                venv_tb = Path('territory') / 'Scripts' / 'tensorboard.exe'
+                venv_py = Path('territory') / 'Scripts' / 'python.exe'
+                if venv_tb.exists():
+                    tb_cmd = [str(venv_tb), '--logdir', str(self.output_dir), '--port', str(port)]
+                elif venv_py.exists():
+                    tb_cmd = [str(venv_py), '-m', 'tensorboard.main', '--logdir', str(self.output_dir), '--port', str(port)]
+                else:
+                    tb_cmd = ['tensorboard', '--logdir', str(self.output_dir), '--port', str(port)]
+            else:
+                tb_cmd = ['tensorboard', '--logdir', str(self.output_dir), '--port', str(port)]
             logger.info(f"Iniciando TensorBoard en el puerto {port}...")
-            
-            # En Windows, necesitamos esto para evitar que aparezca la ventana del CMD
-            startupinfo = subprocess.STARTUPINFO()
-            startupinfo.dwFlags |= subprocess.STARTF_USESHOWWINDOW
-            
-            self.process = subprocess.Popen(
-                cmd,
-                stdout=subprocess.PIPE,
-                stderr=subprocess.PIPE,
-                startupinfo=startupinfo
-            )
-            
-            # Esperar a que inicie
+            startupinfo = None
+            if os.name == 'nt':
+                startupinfo = subprocess.STARTUPINFO()
+                startupinfo.dwFlags |= subprocess.STARTF_USESHOWWINDOW
+            try:
+                self.process = subprocess.Popen(
+                    tb_cmd,
+                    stdout=subprocess.PIPE,
+                    stderr=subprocess.PIPE,
+                    startupinfo=startupinfo
+                )
+            except FileNotFoundError:
+                logger.error("❌ TensorBoard no está instalado o no se encuentra en el entorno. Por favor, instala TensorBoard con 'pip install tensorboard'.")
+                return
             sleep(2)
-            
-            # Verificar si el proceso sigue vivo
             if self.process.poll() is not None:
                 stderr = self.process.stderr.read().decode()
                 raise RuntimeError(f"TensorBoard falló al iniciar: {stderr}")
-            
-            # Abrir navegador
             url = f"http://localhost:{port}/#projector"
             logger.info(f"\n✨ TensorBoard iniciado en {url}")
             logger.info("Abriendo navegador...")
             webbrowser.open(url)
-            
         except FileNotFoundError as e:
             logger.error(f"❌ {str(e)}")
         except Exception as e:
