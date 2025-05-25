@@ -33,6 +33,14 @@ Esta herramienta puede ser especialmente útil para:
 - **Visualización Interactiva**: Integración con TensorBoard para visualizar los embeddings en un espacio tridimensional.
 - **Interfaz CLI Amigable**: Interfaz de línea de comandos interactiva para facilitar el uso.
 
+## 👀 Vídeo recomendado
+
+- [DotCSV - ¿Qué es Word2Vec? (YouTube)](https://youtu.be/RkYuH_K7Fx4)
+
+## 📄 Paper original de Word2Vec
+
+- [Word2Vec: Efficient Estimation of Word Representations in Vector Space (Mikolov et al., 2013)](https://arxiv.org/pdf/1301.3781)
+
 ## 🛠️ Estructura del Proyecto
 
 ```
@@ -129,12 +137,13 @@ En TensorBoard podrás:
 
 - Si tienes alguna duda, o necesitas ayuda, podemos conectar en [Linkedin](https://www.linkedin.com/in/virtuanista/).
 - Si quieres compartir el proyecto: [https://github.com/virtuanista/vector-explorer](https://github.com/virtuanista/vector-explorer)
-- Si te ha gustado, una estrella es bienvenida ⭐
+- Wiki [Enlace directo](https://deepwiki.com/virtuanista/vector-explorer).
+- Si te ha gustado, una estrellita es bienvenida ⭐
 
 ## 📄 Licencia
 
 <p align="center">
-	Repositorio generado por <a href="https://github.com/sabiopobre" target="_blank">virtu 🎣</a>
+	Repositorio generado por <a href="https://github.com/virtuanista" target="_blank">virtu 🎣</a>
 </p>
 
 <p align="center">
