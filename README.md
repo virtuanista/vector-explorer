@@ -75,7 +75,7 @@ vector-explorer/
 1. Clonar el repositorio:
 
 ```bash
-git clone https://github.com/yourusername/vector-explorer.git
+git clone https://github.com/virtuanista/vector-explorer.git
 cd vector-explorer
 ```
 
