@@ -1,3 +1,5 @@
+<p align="center"><b>Español</b> · <a href="README.en.md">English</a></p>
+
 # Vector Explorer
 
 Vector Explorer es una herramienta interactiva que permite explorar y visualizar embeddings de modelos de procesamiento de lenguaje natural (NLP). La aplicación facilita la extracción de embeddings del vocabulario completo de diferentes modelos y su visualización en TensorBoard.
