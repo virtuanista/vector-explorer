@@ -49,10 +49,15 @@ Esta herramienta puede ser especialmente útil para:
 vector-explorer/
 ├── config/
 │   └── config.json          # Configuración del proyecto
-├── embeddings_output/       # Directorio donde se guardan los embeddings
+├── embeddings_output/       # Se crea al extraer: aquí se guardan los embeddings
 │   ├── metadata.tsv
 │   ├── projector_config.pbtxt
 │   └── tensor.tsv
+├── main.py                  # Menú principal
+├── extract_embeddings.py    # Extracción de embeddings
+├── lanzar_tensorboard.bat   # Abre TensorBoard en Windows
+├── scripts/
+│   └── extract_tsv.py       # Exporta a TSV
 ├── src/
 │   ├── cli/
 │   │   └── interactive.py   # Interfaz de línea de comandos
@@ -156,5 +161,5 @@ En TensorBoard podrás:
 </p>
 
 <p align="center">
-	<a href="/LICENSE"><img src="https://img.shields.io/static/v1.svg?style=for-the-badge&label=License&message=MIT&logoColor=d9e0ee&colorA=363a4f&colorB=b7bdf8"/></a>
+	<a href="LICENSE"><img src="https://img.shields.io/static/v1.svg?style=for-the-badge&label=License&message=MIT&logoColor=d9e0ee&colorA=363a4f&colorB=b7bdf8"/></a>
 </p>

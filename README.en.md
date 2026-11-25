@@ -49,10 +49,15 @@ This tool can be especially useful for:
 vector-explorer/
 ├── config/
 │   └── config.json          # Project configuration
-├── embeddings_output/       # Directory where embeddings are saved
+├── embeddings_output/       # Created on extraction: embeddings are saved here
 │   ├── metadata.tsv
 │   ├── projector_config.pbtxt
 │   └── tensor.tsv
+├── main.py                  # Main menu
+├── extract_embeddings.py    # Embedding extraction
+├── lanzar_tensorboard.bat   # Opens TensorBoard on Windows
+├── scripts/
+│   └── extract_tsv.py       # Exports to TSV
 ├── src/
 │   ├── cli/
 │   │   └── interactive.py   # Command-line interface
@@ -156,5 +161,5 @@ In TensorBoard you can:
 </p>
 
 <p align="center">
-	<a href="/LICENSE"><img src="https://img.shields.io/static/v1.svg?style=for-the-badge&label=License&message=MIT&logoColor=d9e0ee&colorA=363a4f&colorB=b7bdf8"/></a>
+	<a href="LICENSE"><img src="https://img.shields.io/static/v1.svg?style=for-the-badge&label=License&message=MIT&logoColor=d9e0ee&colorA=363a4f&colorB=b7bdf8"/></a>
 </p>
